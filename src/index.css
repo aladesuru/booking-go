@@ -1,0 +1,327 @@
+/* Normalise browser default setting opinionated */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Type face */
+@font-face {
+  font-family: ubuntu;
+  src: url(./assets/fonts/ubuntu-b.woff);
+}
+
+/******************************************/
+/* general default setting
+/******************************************/
+body {
+  font-family: "Open Sans";
+  font-size: 100%;
+  background-color: #f5f5f5;
+}
+
+header,
+nav {
+  width: 100;
+  display: block;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+/******************************************/
+/*  container styling 
+/******************************************/
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+}
+@media all and (min-width: 769px) {
+  .container {
+    width: 90%;
+  }
+}
+@media all and (min-width: 2200px) {
+  .container {
+    width: 50%;
+  }
+}
+
+/******************************************/
+/*  navigation styling 
+/******************************************/
+header {
+  /* outline: 1px solid red; */
+  height: 70px;
+  line-height: 70px;
+  border-bottom: 1px solid #ffffff33;
+  padding-bottom: 10px;
+}
+header .logo {
+  float: left;
+  width: 30%;
+  /* padding-top: 6px; */
+}
+header .navigation {
+  float: right;
+  width: 70%;
+  text-align: right;
+  /* outline: 1px solid green; */
+}
+.navigation ul {
+  list-style: none;
+}
+.navigation ul li {
+  color: #fff;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 16px;
+  border-left: 1px solid #ffffff33;
+  text-align: center;
+  font-family: "open sans";
+}
+
+.menu-icons::before {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 10px;
+}
+.pound-icon::before {
+  content: " ";
+  background-image: url("./assets/images/pounds-symbol.svg");
+}
+.flag-icon::before {
+  content: " ";
+  background-image: url("./assets/images/united-kingdom.svg");
+}
+.booking-icon::before {
+  content: " ";
+  background-image: url("./assets/images/edit.svg");
+}
+.sign-in-icon::before {
+  content: " ";
+  background-image: url("./assets/images/user-outline.svg");
+}
+.menu-icon::before {
+  content: " ";
+  background-image: url("./assets/images/menu-icon.svg");
+}
+
+/*  navigation media query setting  */
+
+@media all and (max-width: 768px) {
+  .menu-icons::before {
+    margin: 10px auto;
+  }
+  .navigation ul li span {
+    display: none;
+  }
+  .navigation ul li:last-child {
+    display: inline-block;
+  }
+  .navigation ul li.hide-menu-icon {
+    display: none;
+  }
+}
+
+@media all and (min-width: 769px) {
+  .navigation ul li span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .navigation ul li:first-child span {
+    display: none;
+  }
+
+  .navigation ul li:nth-child(3)::before {
+    display: none;
+  }
+  .navigation ul li:last-child {
+    display: none;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .navigation ul li:first-child span {
+    display: inline-block;
+  }
+}
+
+/* Element default setting  */
+.hero-area {
+  background-color: #0a6eb9;
+}
+
+/******************************************/
+/* Search Form styling 
+/******************************************/
+
+.form {
+  background-color: #f3ce56;
+  padding: 8px;
+  color: #444;
+}
+.form h2 {
+  font-family: ubuntu;
+  color: #444;
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 2em;
+}
+.form-group {
+  margin: 20px 0;
+  border-radius: 5px;
+}
+.searchbox {
+  position: relative;
+}
+.form label {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: "open sans";
+}
+
+.form-control {
+  width: 100%;
+  display: block;
+}
+
+input.form-control {
+  height: 48px;
+  font-size: 1rem;
+  border-color: #c8ae5b;
+  -webkit-appearance: none;
+  border: 1px solid #b4b4b4;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-weight: 400;
+}
+
+button.form-control {
+  background-color: #00874d;
+  border: 1px solid transparent;
+  font-family: ubuntu;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  height: 56px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.2;
+  cursor: pointer;
+  height: 64px;
+  line-height: 64px;
+}
+button.form-control:hover {
+  background-color: #025f37;
+}
+
+input:focus {
+  outline: 1px solid #f3ce56;
+}
+
+@media all and (max-width: 768px) {
+}
+
+@media all and (min-width: 769px) {
+  .form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 24px;
+  }
+  .form h2 {
+    font-size: 24px;
+  }
+
+  button.form-control {
+    font-size: 24px;
+  }
+}
+
+/******************************************/
+/*  Result list styling
+/******************************************/
+.result-list {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 16px 0px;
+  border-color: #c8ae5b;
+  font-family: "open sans";
+  position: absolute;
+  width: 100%;
+  top: 81px;
+  left: 0;
+}
+.result-list h2 {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px;
+}
+
+.result-list li {
+  border-bottom: 1px solid #f5f5f5;
+  padding: 10px;
+  transition: background-color 0.45s;
+}
+.result-list li:last-child {
+  border: none;
+}
+.result-list li span {
+  display: inline-block;
+  vertical-align: top;
+  margin: 2%;
+}
+
+.result-list li:hover {
+  background-color: #e7f4fe;
+}
+
+.airport,
+.city {
+  color: #fff;
+  padding: 5px;
+  width: 20%;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+}
+.airport {
+  background-color: #961412;
+}
+.city {
+  background-color: #0a63b0;
+}
+.nomatch {
+  text-align: center;
+  font-size: 15px;
+}
+
+/******************************************/
+/*  class helper
+/******************************************/
+.clearfix::after {
+  content: "";
+  display: block;
+  width: 100%;
+  clear: both;
+}
